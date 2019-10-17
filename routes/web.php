@@ -16,4 +16,7 @@ $router->get('/', function () use ($router) {
 });
 
 
-$router->get('pay/{id}', 'ApiController@pay');
+$router->post('pay', 'ApiController@pay');
+$router->post('payment_complete/{token_secret}', 'ApiController@payment_complete');
+$router->post('payment_cancel', 'ApiController@payment_cancel');
+$router->post('payment_callback/{token_secret}', 'ApiController@payment_callback');
